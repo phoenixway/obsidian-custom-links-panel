@@ -27,6 +27,26 @@ export default class MyPlugin extends Plugin {
         this.registerEvent(
             this.app.workspace.on('editor-change', () => this.updateView())
         );
+
+        // Додаємо команду для показу/сховання панелі
+        this.addCommand({
+            id: 'toggle-links-panel',
+            name: 'Toggle Links Panel',
+            callback: () => this.toggleView(),
+        });
+    }
+
+    // Метод для перемикання видимості панелі
+    async toggleView() {
+        const leaves = this.app.workspace.getLeavesOfType('links-panel');
+
+        if (leaves.length > 0) {
+            // Якщо панель відкрита, закриваємо її
+            await this.app.workspace.detachLeavesOfType('links-panel');
+        } else {
+            // Якщо панель закрита, відкриваємо її
+            this.activateView();
+        }
     }
 
     async activateView() {
