@@ -1,0 +1,11 @@
+{
+  "id": "obsidian-custom-links-panel",
+  "name": "Custom links panel",
+  "version": "0.0.1",
+  "minAppVersion": "0.0.1",
+  "description": "Cusom links side panel",
+  "author": "Roman Kozak",
+  "authorUrl": "https://github.com/phoenixway",
+  "fundingUrl": "",
+  "isDesktopOnly": false
+}
